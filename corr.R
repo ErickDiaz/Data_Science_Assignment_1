@@ -11,17 +11,12 @@ corr <- function(directory, threshold = 0 ) {
         ## variables) required to compute the correlation between
         ## nitrate and sulfate; the default is 0
         matrixTemp <-  matixNobs[ matixNobs[,"nobs"] > threshold, ]
-        #print(matrixTemp)
+
         
 
         for ( i in matrixTemp[,"id"] ){
         	fileName <- c(directory, archivos[i])
         	
-        	##if (!exists("df_joined")){
-			##   df_joined <- read.csv(paste(fileName, collapse="/"))
-			##}else{
-			##	df_joined <- merge(df_joined, read.csv(paste(fileName, collapse="/")) , all=TRUE)
-			##}  
 
 			rawData <- read.csv(paste(fileName, collapse="/"))
 
@@ -40,15 +35,5 @@ corr <- function(directory, threshold = 0 ) {
         }  
 
         print(corVectorResult)
-
-        ##sulfateVectorRaw = df_joined[['sulfate']] 
-        ##nitrateVectorRaw = df_joined[['nitrate']] 
-
-        ##sulfateVectorRaw[is.na(sulfateVectorRaw)] <- 0
-        ##nitrateVectorRaw[is.na(nitrateVectorRaw)] <- 0
-
-        ##print(sulfateVectorRaw)
-
-        ##print(cor(sulfateVectorRaw,nitrateVectorRaw))
         ## Return a numeric vector of correlations
 }
