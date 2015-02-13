@@ -4,7 +4,7 @@ pollutantmean <- function(directory, pollutant, id ) {
         ## the location of the CSV files
 
         archivos <- list.files(directory,pattern = "\\.csv$")
-        print(archivos)
+        ##print(archivos)
         
         ## 'id' is an integer vector indicating the monitor ID numbers
         ## to be used
@@ -12,7 +12,7 @@ pollutantmean <- function(directory, pollutant, id ) {
         ## *Recorriendo la lista de id's para formar el data set
         for (i in id){        	
         	fileName <- c(directory, archivos[i])
-        	print(paste(fileName, collapse="/"))
+        	##print(paste(fileName, collapse="/"))
         	
         	if (!exists("df_joined")){
 			   df_joined <- read.csv(paste(fileName, collapse="/"))
@@ -21,7 +21,7 @@ pollutantmean <- function(directory, pollutant, id ) {
 			}        	        
         }
 
-        print(df_joined)
+        ##print(df_joined)
 		
         ## 'pollutant' is a character vector of length 1 indicating
         ## the name of the pollutant for which we will calculate the
@@ -29,7 +29,7 @@ pollutantmean <- function(directory, pollutant, id ) {
 
         pollutantVectorRaw = df_joined[[pollutant]] 
 
-        print( pollutantVectorRaw[!is.na(pollutantVectorRaw)] )     
+        ##print( pollutantVectorRaw[!is.na(pollutantVectorRaw)] )     
 
         ## Return the mean of the pollutant across all monitors list
         ## in the 'id' vector (ignoring NA values)

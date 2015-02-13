@@ -32,6 +32,8 @@ complete <- function(directory, id ) {
         }
         
         colnames(matrixResult) <- c("id","nobs")
+        
+        ## ** RESULTADO **
         print(matrixResult)
         ## Return a data frame of the form:
         ## id nobs
