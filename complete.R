@@ -14,7 +14,7 @@ complete <- function(directory, id ) {
         ## *Recorriendo la lista de id's para formar el data set
         for (i in id){          
                 fileName <- c(directory, archivos[i])
-                print(paste(fileName, collapse="/"))
+                ##print(paste(fileName, collapse="/"))
                 
                 rawData <- read.csv(paste(fileName, collapse="/")) 
 
