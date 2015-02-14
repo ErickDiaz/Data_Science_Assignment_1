@@ -1,0 +1,37 @@
+y <- c(1.7,"a")
+y
+y <-(true,2)
+y <-(TRUE,2)
+y <- c(TRUE,2)
+y
+y <-c("a",TRUE)
+y
+x <- 0:6
+class(x)
+as.logical(x)
+as.integer(x)
+x <- list( 1, "a", TRUE, 1+4i)
+x
+class(x)
+m <- matrix(1:6, nrow = 2, ncol = 3)
+m
+atributes(m)
+dim(m)
+n <- 1:10
+dim(n) <- c(2,5)
+n
+x <- factor(c("yes","no","yes","no","no"))
+x
+table(x)
+unclass(x)
+x <- factor(c("yes","no","yes","no","no")), levels = c("yes","no")
+x <- factor(c("yes","no","yes","no","no"), levels = c("yes","no"))
+unclas (x)
+unclass(x)
+in.na(x)
+is.na(x)
+is.nan(x)
+getwd()
+source("http://d396qusza40orc.cloudfront.net/rprog%2Fscripts%2Fsubmitscript1.R")
+submit
+submit()

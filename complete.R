@@ -23,18 +23,22 @@ complete <- function(directory, id = 1:332) {
 
                 ##print(nrow(temp2))    
 
-                if (!exists("matrixResult")){
-                        matrixResult <- matrix( c(i, nrow(temp2)), nrow=1, ncol=2)
+                if (!exists("countVector")){
+                       countVector <- nrow(temp2)
+                       idVector <- i 
                 }else{
-                        ##matrixResult <- rbind( matrixResult, matrix( c(i, nrow(temp2)), nrow=1, ncol=2) )
-                        matrixResult <- rbind( matrixResult,  c(i, nrow(temp2)) )
-                }                       
+                       countVector <- c( countVector, nrow(temp2) )
+                       idVector <-  c( idVector, i) 
+                       
+                }        
+
+                dfResult <- data.frame(idVector,countVector)               
         }
         
-        colnames(matrixResult) <- c("id","nobs")
+        colnames(dfResult) <- c("id","nobs")
         
         ## ** RESULTADO **
-        print(matrixResult)
+        dfResult
         ## Return a data frame of the form:
         ## id nobs
         ## 1  117
